@@ -1,0 +1,33 @@
+target_sources(xlengine
+                PRIVATE
+                    "${CMAKE_CURRENT_SOURCE_DIR}/filestream.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/gameLoop.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/gameUI.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/imageLoader.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/iniReader.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/iniWriter.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/input.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/log.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/memoryPool.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/services.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/settings.cpp")
+
+if(WIN32)
+    target_sources(xlengine
+                    PRIVATE
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Win32/clockWin32.cpp"
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Win32/osUtilWin32.cpp")
+else()
+    target_sources(xlengine
+                    PRIVATE
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Linux/clockLinux.cpp"
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Linux/osUtilLinux.cpp")
+endif()
+
+add_subdirectory(Graphics/)
+add_subdirectory(Math/)
+add_subdirectory(PluginFramework/)
+add_subdirectory(Sound/)
+add_subdirectory(Text/)
+add_subdirectory(Threads/)
+add_subdirectory(UI/)

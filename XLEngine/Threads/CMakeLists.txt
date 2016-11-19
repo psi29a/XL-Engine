@@ -1,0 +1,11 @@
+if(WIN32)
+    target_sources(xlengine
+                    PRIVATE
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Win32/mutexWin32.cpp"
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Win32/threadWin32.cpp")
+else()
+    target_sources(xlengine
+                    PRIVATE
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Linux/mutexLinux.cpp"
+                        "${CMAKE_CURRENT_SOURCE_DIR}/Linux/threadLinux.cpp")
+endif()

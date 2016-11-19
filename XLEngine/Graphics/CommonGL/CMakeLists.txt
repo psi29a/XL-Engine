@@ -1,0 +1,9 @@
+target_sources(xlengine
+                PRIVATE
+                    "${CMAKE_CURRENT_SOURCE_DIR}/graphicsDeviceGL.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/indexBufferGL.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/renderTargetGL.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/shaderGL.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/streamingVertexBuffer.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/textureGL.cpp"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/vertexBufferGL.cpp")

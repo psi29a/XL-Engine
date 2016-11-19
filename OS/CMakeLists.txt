@@ -1,0 +1,5 @@
+if(WIN32)
+    target_sources(xlengine PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/win32/main.cpp")
+else()
+    target_sources(xlengine PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/Linux/main.cpp")
+endif()
