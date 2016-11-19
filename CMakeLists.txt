@@ -14,21 +14,24 @@ add_executable(xlengine "")
 if(WIN32)
     target_sources(xlengine PRIVATE "stdafx.cpp")
 else()
-    target_link_libraries(xlengine ${CMAKE_DL_LIBS})
+    target_include_directories(xlengine
+                                PRIVATE
+                                    ${X11_INCLUDE_DIR})
+    target_link_libraries(xlengine
+                                    ${CMAKE_DL_LIBS}
+                                    ${X11_LIBRARIES} ${X11_Xrandr_LIB})
 endif()
 
 target_include_directories(xlengine
                             PRIVATE
                                 ${OPENGL_INCLUDE_DIR}
                                 ${OPENAL_INCLUDE_DIR}
-                                ${FREETYPE_INCLUDE_DIRS}
-                                ${X11_INCLUDE_DIR})
+                                ${FREETYPE_INCLUDE_DIRS})
 
 target_link_libraries(xlengine
                         ${OPENGL_LIBRARIES}
                         ${OPENAL_LIBRARY}
                         ${FREETYPE_LIBRARIES}
-                        ${X11_LIBRARIES} ${X11_Xrandr_LIB}
                         ${CMAKE_THREAD_LIBS_INIT}
                         WildMidi
                         IL
