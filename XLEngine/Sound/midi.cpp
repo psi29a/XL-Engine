@@ -175,7 +175,7 @@ namespace Midi
 			{
 				if (s_midiFormat == MFMT_GUS_PATCH)
 				{
-					soundSize = WildMidi_GetOutput(s_song, (char*)&chunkData[totalSize], requestedChunkSize-totalSize);
+					soundSize = WildMidi_GetOutput(s_song, (signed char*)&chunkData[totalSize], requestedChunkSize-totalSize);
 				}
 				else if (s_midiFormat == MFMT_SOUND_FONT)
 				{
@@ -195,7 +195,7 @@ namespace Midi
 					{
 						unsigned long beginning = 0;
 						WildMidi_FastSeek(s_song, &beginning);
-						soundSize = WildMidi_GetOutput(s_song, (char*)&chunkData[totalSize], requestedChunkSize-totalSize);
+						soundSize = WildMidi_GetOutput(s_song, (signed char*)&chunkData[totalSize], requestedChunkSize-totalSize);
 					}
 					else if (s_midiFormat == MFMT_SOUND_FONT)
 					{
